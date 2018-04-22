@@ -113,15 +113,16 @@ export default {
 .icons >>> .swiper-container {
   width: 100%;
   height: 0;
-  padding-bottom: 50%; // 宽高比为2
+  padding-bottom: 54%; // 宽高比为2
   overflow: hidden;
 }
 
 .icons {
   width: 100%;
   height: 0;
-  padding-bottom: 50%; // 宽高比为2
+  padding-bottom: 54%; // 宽高比为2
   overflow: hidden;
+  margin-top 10px
 
   .icon {
     float: left;
