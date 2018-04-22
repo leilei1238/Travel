@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <transition name="fade" @beforeEnter="handleBeforeEnter" @enter="handleEnter" @after-enter="handleAfterEnter">
+            <p v-show="show">hello world</p>
+        </transition>
+        <button @click="handleClick">toggle</button>
+    </div>
+    <script src="vue.js"></script>
+    <script src="velocity.min.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data() {
+                return {
+                    show: false
+                }
+            },
+            methods: {
+                handleClick() {
+                    this.show = !this.show
+                },
+                handleBeforeEnter(el) {
+                    el.style.opacity = 0;
+                    el.style.backgroundColor='red'
+                },
+                handleEnter(el, done) {
+                    Velocity(
+                        el,
+                        { opacity: 1, backgroundColor:'green'},
+                        {
+                            duration: 1000,
+                            easing: 'swing',
+                            complete: done
+                        }
+                    )
+                },
+                handleAfterEnter(el) {
+                    alert('动画结束')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

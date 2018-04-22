@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/module.js"],"names":[],"mappings":";;AAEA","file":"module.js","sourcesContent":["// const {writeFile} = require('fs') //解构方式的模块加载-运行时加载\n//静态加载：代码编译的时候加载\nimport {writeFile} from 'fs'\n\n"]}

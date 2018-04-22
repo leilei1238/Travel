@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <style>
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 1s;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div id="root">
+        <fade :show="show">
+            <p>hello world</p>
+        </fade>
+        <button @click="handleClick">toggle</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('fade',{
+            props:['show'],
+            template:`
+            <transition
+             name="fade"
+             @before-enter="beforeEnter"
+             @enter="enter"
+             >
+                <slot v-if="show"></slot>
+            </transition>
+            `,
+            methods:{
+                beforeEnter(el){
+                    el.style.color="red"
+                },
+                enter(el,done){
+                    setTimeout(()=>{
+                        el.style.color="green";
+                        done;
+                    },1000)
+                }
+            }
+        })
+        let vm = new Vue({
+            el: '#root',
+            data: {
+                show: false
+            },
+            methods: {
+                handleClick() {
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

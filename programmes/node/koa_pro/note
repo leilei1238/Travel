@@ -1,0 +1,38 @@
+### 预告？
+- 做什么？
+    开发一个可以实时更新的预告片网站
+- 哪些功能？
+    网站首页，网站首页播放窗口，网站播放详情页，网站详情推荐，网站后台登录，网站后台管理列表等
+- 技术栈？
+    Koa2+Nodejs+MongoDB+Puppeteer+Parcel+AntDesign
+- 收获：
+    1、从0开始掌握一个网站的开发历程
+    2、从表象API调用掌握到框架内核底层原理
+    3、掌握Nodejs事件循环/单线程/异步IO等诸多概念
+    4、会在Nodejs中使用模板引擎
+    5、会使用Pupeteer爬取高难度数据
+    6、会使用Parcel对Bootstrap多页静态网站进行打包
+    7、会使用Parcel对AntDesign但页网站进行打包
+    8、会在Koa2中使用MongoDB数据库
+    9、会掌握如何在Koa2项目中进行MVC设计与API分层
+### es6技术讲解
+- nvm install v8.11.1 && nvm use 8.9.11 && nvm alias default v8.9.11
+- tj/co： tj大神一直不断产生各种nodejs库
+- 箭头函数：胖箭头函数=》 和 瘦 -》
+- 语法错误：SyntaxError:
+
+### koa2
+- 核心：HTTP 接收 解析 响应 中间件(日志，表单解析) 执行上下文(托管请求，解析和中间件)
+    Application Context
+    Request Response 
+    Middlewares
+    Session Cookie
+- 看框架思路：
+    1、先看readme.md
+    2、history.md 了解过去几年发生的变化； 了解迭代的节奏
+    3、看package.json 指出当前模块的入口文件（建议，了解koa基本原理-再了解下面的第三方模块-不要陷入细节）
+    4、通过删减法度源码，把非核心的代码，无关的，不影响流程的代码，暂时删掉；注意：依赖模块“不要上来就盯细节”，先看他们解决的“核心问题”；
+        留下constructor，删除其他方法，看对象有哪些属性
+        删除条件判断，删除断言，注释等 --需要的话，注释可以保留
+
+

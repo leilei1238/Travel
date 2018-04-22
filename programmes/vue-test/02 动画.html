@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        /* 过度动画效果 */
+        /* .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+        .fade-enter-active, .fade-leave-active{
+            transition: opacity 1s;
+        } */
+        .fade-enter, .fade-leave-to{
+            opacity: 0;
+        }
+        .fade-enter-active, .fade-leave-active{
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <transition
+         :duration="1000"
+         name="fade"
+         appear
+         enter-active-class="animated swing fade-enter-active"
+         leave-active-class="animated shake fade-leave-active"
+         appear-active-class="animated bounce"
+         >
+            <p v-if="show">hello world</p>
+        </transition>
+        <button @click="change">切换</button>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#root',
+            data: {
+                show: true
+            },
+            methods: {
+                change() {
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
