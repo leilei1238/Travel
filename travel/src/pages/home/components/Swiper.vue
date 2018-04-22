@@ -66,6 +66,11 @@ export default {
   background: #fff !important;
 }
 
+.wrapper >>> .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+}
+
 .wrapper {
   width: 100%;
   height: 0;
