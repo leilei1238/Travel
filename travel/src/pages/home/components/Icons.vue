@@ -1,15 +1,21 @@
 <template>
   <div class="icons">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="(page, index) of pages"  :key="index">
-        <div class="icon"  v-for="item in page" :key="item.id">
-          <div class="icon-img">
-            <img class="icon-img-content" :src="item.imgUrl" alt="">
+      <swiper-slide v-for="(page, index) of pages"
+                    :key="index">
+        <div class="icon"
+             v-for="item in page"
+             :key="item.id">
+          <div class="icon1-img">
+            <img class="icon1-img-content"
+                 :src="item.imgUrl"
+                 alt="">
           </div>
           <p class="icon-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-pagination"
+           slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -22,7 +28,7 @@ export default {
       type: Array
     }
   },
-  data() {
+  data () {
     return {
       swiperOption: {
         pagination: ".swiper-pagination"
@@ -30,7 +36,7 @@ export default {
     };
   },
   computed: {
-    pages() {
+    pages () {
       const pages = [];
       this.list.forEach((item, index) => {
         const page = Math.floor(index / 8);
@@ -75,7 +81,7 @@ export default {
     position: relative;
     height: 0;
 
-    .icon-img {
+    .icon1-img {
       position: absolute;
       left: 0;
       top: 0;
@@ -84,7 +90,7 @@ export default {
       box-sizing: border-box;
       padding: 10px;
 
-      .icon-img-content {
+      .icon1-img-content {
         height: 100%;
         display: block;
         margin: 0 auto;
